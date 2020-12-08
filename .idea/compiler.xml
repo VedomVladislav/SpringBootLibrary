@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="by.javavedom.training.library.springlibrary.main" target="1.8" />
+      <module name="by.javavedom.training.library.springlibrary.test" target="1.8" />
+      <module name="springLibrary.main" target="1.8" />
+      <module name="springLibrary.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

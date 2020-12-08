@@ -1,0 +1,64 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.4.RELEASE'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+
+
+war {
+    archiveBaseName = 'library'
+    version = '0.0.1-SNAPSHOT'
+}
+
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+
+}
+
+ext['hibernate.version'] = '5.4.2.Final'
+
+
+configurations {
+    providedRuntime
+
+    compile.exclude module: 'spring-boot-starter-tomcat'
+
+}
+
+dependencies {
+
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa:+')
+    implementation('org.springframework.boot:spring-boot-starter-web:+')
+    implementation('org.springframework.boot:spring-boot-starter-security:+')
+    implementation("org.springframework.boot:spring-boot-starter-actuator:+")
+    implementation("org.springframework.boot:spring-boot-starter-aop:+")
+
+    implementation 'org.projectlombok:lombok:+'
+    implementation 'com.google.guava:guava:+'
+
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
+    providedCompile 'javax:javaee-api:7.0'
+
+
+}
